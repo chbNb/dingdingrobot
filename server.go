@@ -7,6 +7,7 @@ import (
 	"github.com/robfig/cron"
 	"io/ioutil"
 	"net/http"
+	"time"
 	"unsafe"
 )
 
@@ -19,6 +20,7 @@ func main() {
 	idx := 5
 	c := cron.New()
 	_ = c.AddFunc(cron_, func() {
+		fmt.Println(time.Now().String())
 		ids := timeMap[idx]
 		idOne, idTwo := ids[0], ids[1]
 		req.Text.Content += member[idOne] + "，" + member[idTwo]
@@ -27,8 +29,6 @@ func main() {
 		req.At.AtUserIds = append(req.At.AtUserIds, userIds[idTwo])
 		req.At.AtMobiles = append(req.At.AtMobiles, phone[idOne])
 		req.At.AtMobiles = append(req.At.AtMobiles, phone[idTwo])
-		fmt.Println(userIds[idOne], userIds[idTwo], phone[idOne], phone[idTwo])
-		fmt.Println(idOne, " ", idTwo)
 		bytesData, err := json.Marshal(req)
 		if err != nil {
 			fmt.Errorf("AddFunc error : %v", err)
