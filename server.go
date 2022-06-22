@@ -61,7 +61,6 @@ func main() {
 		req.At.AtUserIds = req.At.AtUserIds[:0]
 		req.At.AtMobiles = req.At.AtMobiles[:0]
 	})
-	// 再次测试一下
 	c.Start()
 	defer c.Stop()
 	select {}
