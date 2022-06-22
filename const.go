@@ -35,9 +35,9 @@ var (
 		{5, 0},
 		{4, 2},
 	}
-	// 0 9 * * 1 每周一上午九点执行
-	cron_ = "0 9 * * 1"
+	cron_ = "0 0 10 ? * MON"
 	// 钉钉webhook
-	// 测试群链接：url = "https://oapi.dingtalk.com/robot/send?access_token=0ac0f9469176242b763d3b1ab92c54fe10d93588ae997fe7aa433c38065a9cb1"
+	// 测试群链接：
+	//url = "https://oapi.dingtalk.com/robot/send?access_token=0ac0f9469176242b763d3b1ab92c54fe10d93588ae997fe7aa433c38065a9cb1"
 	url = "https://oapi.dingtalk.com/robot/send?access_token=6c0465483418b335583760f6b295627d11bbc6d64ce64b25c6e9a0c287b665c6"
 )

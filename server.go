@@ -17,7 +17,7 @@ func main() {
 	req.Text.Content = "本周值班同学："
 	req.At.isAtAll = false
 	// 当前值班组
-	idx := 5
+	idx := 0
 	c := cron.New()
 	_ = c.AddFunc(cron_, func() {
 		fmt.Println(time.Now().String())
