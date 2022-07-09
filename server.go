@@ -23,7 +23,7 @@ func main() {
 		fmt.Println(time.Now().String())
 		ids := timeMap[idx]
 		idOne, idTwo := ids[0], ids[1]
-		req.Text.Content += member[idOne] + "，" + member[idTwo]
+		req.Text.Content += member[idOne] + "，backup:" + member[idTwo]
 		// 必须添加电话才能@
 		req.At.AtUserIds = append(req.At.AtUserIds, userIds[idOne])
 		req.At.AtUserIds = append(req.At.AtUserIds, userIds[idTwo])
